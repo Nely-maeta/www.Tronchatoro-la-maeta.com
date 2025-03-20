@@ -5,6 +5,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
     <link rel="stylesheet" href="styles.css">
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #comment-box {
+            margin-bottom: 20px;
+        }
+        #comments {
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 	<h1>ESCOLAR</h1>
@@ -135,36 +155,15 @@
 <body>
 
 <h2>Comentarios</h2>
+<div id="comment-box">
+        <textarea id="comment" rows="4" cols="50" placeholder="Escribe tu comentario aquí..."></textarea><br>
+        <button onclick="addComment()">Enviar Comentario</button>
+    </div>
 
-<div id="comments-section">
-    <!-- Los comentarios aparecerán aquí -->
-</div>
+    <div id="comments"></div>
 
-<div id="comment-form">
-    <textarea id="comment-input" rows="4" cols="50" placeholder="Escribe tu comentario aquí..."></textarea><br>
-    <button onclick="addComment()">Enviar Comentario</button>
-</div>
+    <script src="script.js"></script>
 
-<script>
-    function addComment() {
-        const commentInput = document.getElementById('comment-input');
-        const commentText = commentInput.value;
-
-        if (commentText.trim() === '') {
-            alert('Por favor, escribe un comentario.');
-            return;
-        }
-
-        const commentsSection = document.getElementById('comments-section');
-        
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment');
-        newComment.textContent = commentText;
-
-        commentsSection.appendChild(newComment);
-        commentInput.value = ''; // Limpiar el campo de texto
-    }
-</script>
 
 
 
